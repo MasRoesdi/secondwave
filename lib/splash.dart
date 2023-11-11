@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:inhacks_2023/widgets/properties.dart';
 import 'login.dart';
 
@@ -39,7 +38,7 @@ class SplashState extends State<SplashScreen> {
             Image.asset('assets/icons/logo.png'),
             Text(
               'SecondWave',
-              style: GoogleFonts.poppins(
+              style: TextStyle(
                 fontSize: 29,
                 fontWeight: FontWeight.w600,
                 color: AppColors.primary,

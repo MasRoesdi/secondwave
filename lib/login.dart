@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:inhacks_2023/home.dart';
+import 'package:inhacks_2023/app_scaffold.dart';
 import 'package:inhacks_2023/register.dart';
 import 'package:inhacks_2023/widgets/opaque_button.dart';
 import 'package:inhacks_2023/widgets/plain_button.dart';
+import 'package:inhacks_2023/widgets/separator.dart';
 import 'widgets/auth_input.dart';
 import 'widgets/properties.dart';
 
@@ -51,20 +52,27 @@ class LoginScreen extends StatelessWidget {
               Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  OpaqueButton(
-                    'Login >',
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    padX: screenSize.width * 0.25,
-                    padY: 16,
-                    callback: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: OpaqueButton(
+                          'Login >',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          padX: 0,
+                          padY: 16,
+                          callback: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const AppScaffold(),
+                              ),
+                            );
+                          },
                         ),
-                      );
-                    },
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 4),
                   Row(
@@ -108,39 +116,21 @@ class OtherAuth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
-
     return Column(
       children: [
         Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              width: screenSize.width * 0.225,
-              margin: const EdgeInsets.only(right: 16),
-              decoration: const BoxDecoration(
-                border: Border(
-                  top: BorderSide(
-                    color: Color.fromRGBO(235, 235, 235, 1),
-                    width: 1,
-                  ),
-                ),
-              ),
+          children: const [
+            Separator(
+              width: 0.225,
+              margin: EdgeInsets.only(right: 16),
             ),
-            const Text('Or Continue With'),
-            Container(
-              width: screenSize.width * 0.225,
-              margin: const EdgeInsets.only(left: 16),
-              decoration: const BoxDecoration(
-                border: Border(
-                  top: BorderSide(
-                    color: Color.fromRGBO(235, 235, 235, 1),
-                    width: 1,
-                  ),
-                ),
-              ),
+            Text('Or Continue With'),
+            Separator(
+              width: 0.225,
+              margin: EdgeInsets.only(left: 16),
             ),
           ],
         ),

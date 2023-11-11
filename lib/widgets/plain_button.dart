@@ -22,6 +22,7 @@ class PlainButton extends StatelessWidget {
       style: const ButtonStyle(
         padding: MaterialStatePropertyAll(EdgeInsets.zero),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        minimumSize: MaterialStatePropertyAll(Size.zero),
       ),
       onPressed: callback!,
       child: Text(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:inhacks_2023/notification.dart';
 import 'package:inhacks_2023/widgets/donation_long.dart';
 import 'package:inhacks_2023/widgets/donation_tall.dart';
 import 'package:inhacks_2023/widgets/properties.dart';
@@ -51,24 +51,24 @@ class Top extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+            children: const [
               Text(
                 'Hi, Humble!',
-                style: GoogleFonts.poppins(
-                  color: const Color.fromRGBO(255, 255, 255, 0.75),
+                style: TextStyle(
+                  color: Color.fromRGBO(255, 255, 255, 0.75),
                   fontWeight: FontWeight.w500,
                   fontSize: 16,
                 ),
               ),
-              const NotificationButton()
+              NotificationButton()
             ],
           ),
           const SizedBox(height: 8),
           Wrap(
-            children: [
+            children: const [
               Text(
                 'Ayo, buat perbedaan dengan berbagi!',
-                style: GoogleFonts.poppins(
+                style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                   fontSize: 24,
@@ -201,7 +201,14 @@ class NotificationButton extends StatelessWidget {
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         minimumSize: MaterialStatePropertyAll(Size.zero),
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const NotificationScreen(),
+          ),
+        );
+      },
       child: Stack(
         alignment: Alignment.topRight,
         children: [

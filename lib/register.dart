@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:inhacks_2023/login.dart';
 import 'package:inhacks_2023/widgets/auth_input.dart';
 import 'package:inhacks_2023/widgets/opaque_button.dart';
 import 'package:inhacks_2023/widgets/plain_button.dart';
 import 'package:inhacks_2023/widgets/properties.dart';
+
+import 'app_scaffold.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -23,7 +25,7 @@ class RegisterScreen extends StatelessWidget {
             children: [
               Text(
                 'Registrasi',
-                style: GoogleFonts.poppins(
+                style: TextStyle(
                   color: AppColors.primary,
                   fontSize: 35,
                   fontWeight: FontWeight.w600,
@@ -47,21 +49,55 @@ class RegisterScreen extends StatelessWidget {
                 isPassword: false,
               ),
               const SizedBox(height: 24),
-              Column(
-                mainAxisSize: MainAxisSize.min,
+              Row(
+                mainAxisSize: MainAxisSize.max,
                 children: [
-                  OpaqueButton(
-                    'Register >',
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    padX: screenSize.width * 0.25,
-                    padY: 16,
-                    callback: () {},
+                  Expanded(
+                    child: OpaqueButton(
+                      'Register >',
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      padX: screenSize.width * 0.25,
+                      padY: 16,
+                      callback: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const AppScaffold(),
+                          ),
+                        );
+                      },
+                    ),
                   ),
-                  const SizedBox(height: 12),
-                  const AuthCheckbox(),
                 ],
               ),
+              const SizedBox(height: 12),
+              const AuthCheckbox(),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Sudah punya akun? Masuk ',
+                    style: TextStyle(
+                      fontSize: 11,
+                    ),
+                  ),
+                  PlainButton(
+                    'di sini',
+                    size: 11,
+                    fontWeight: FontWeight.w600,
+                    callback: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ),
+                      );
+                    },
+                  )
+                ],
+              )
             ],
           ),
         ),

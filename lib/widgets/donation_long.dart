@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:inhacks_2023/widgets/opaque_button.dart';
 
 class DonationLong extends StatelessWidget {
@@ -46,9 +45,9 @@ class DonationLong extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Lorem ipsum',
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                   ),
@@ -57,20 +56,20 @@ class DonationLong extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset('assets/icons/address.png'),
-                    Text(
+                    const Text(
                       'Address',
-                      style: GoogleFonts.poppins(
+                      style: TextStyle(
                         fontSize: 10,
-                        color: const Color.fromRGBO(130, 130, 130, 1),
+                        color: Color.fromRGBO(130, 130, 130, 1),
                       ),
                     ),
                   ],
                 ),
-                Text(
+                const Text(
                   '3.3 Km',
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(
                     fontSize: 12,
-                    color: const Color.fromRGBO(130, 130, 130, 1),
+                    color: Color.fromRGBO(130, 130, 130, 1),
                   ),
                 ),
               ],

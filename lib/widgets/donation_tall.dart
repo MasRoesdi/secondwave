@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inhacks_2023/donation_detail.dart';
 
 class DonationTall extends StatelessWidget {
   final String assetName;
@@ -11,7 +12,14 @@ class DonationTall extends StatelessWidget {
       style: const ButtonStyle(
         foregroundColor: MaterialStatePropertyAll(Colors.black),
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const DonationDetailScreen(),
+          ),
+        );
+      },
       child: Container(
         width: 180,
         height: 180,

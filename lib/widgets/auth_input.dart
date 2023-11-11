@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AuthInput extends StatelessWidget {
   final String? placeholderText;
@@ -19,7 +18,7 @@ class AuthInput extends StatelessWidget {
         ),
         decoration: InputDecoration(
           filled: true,
-          fillColor: const Color.fromRGBO(196, 196, 196, 0.2),
+          fillColor: Colors.grey[200],
           hintText: placeholderText,
           hintStyle: const TextStyle(
             fontSize: 14,

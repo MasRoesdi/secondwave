@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:inhacks_2023/widgets/properties.dart';
 
 class OpaqueButton extends StatelessWidget {
@@ -8,6 +7,8 @@ class OpaqueButton extends StatelessWidget {
   final FontWeight fontWeight;
   final double padX;
   final double padY;
+  final Color? color;
+  final Color? textColor;
   final VoidCallback? callback;
 
   const OpaqueButton(
@@ -16,6 +17,8 @@ class OpaqueButton extends StatelessWidget {
     required this.fontWeight,
     required this.padX,
     required this.padY,
+    this.color,
+    this.textColor,
     required this.callback,
     super.key,
   });
@@ -24,12 +27,12 @@ class OpaqueButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
+        minimumSize: const MaterialStatePropertyAll(Size.zero),
         padding: MaterialStatePropertyAll(
           EdgeInsets.symmetric(horizontal: padX, vertical: padY),
         ),
-        backgroundColor: MaterialStatePropertyAll(
-          AppColors.primary,
-        ),
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        backgroundColor: MaterialStatePropertyAll(color ?? AppColors.primary),
         shape: MaterialStatePropertyAll(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -39,8 +42,8 @@ class OpaqueButton extends StatelessWidget {
       onPressed: callback!,
       child: Text(
         text,
-        style: GoogleFonts.poppins(
-          color: Colors.white,
+        style: TextStyle(
+          color: textColor ?? Colors.white,
           fontSize: fontSize,
           fontWeight: fontWeight,
         ),
