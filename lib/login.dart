@@ -48,7 +48,7 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               const OtherAuth(),
-              const SizedBox(height: 24),
+              SizedBox(height: screenSize.height * 0.0025),
               Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -74,7 +74,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 4),
+                  const SizedBox(height: 12),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -123,14 +123,18 @@ class OtherAuth extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
-            Separator(
-              width: 0.225,
-              margin: EdgeInsets.only(right: 16),
+            Expanded(
+              child: Separator(
+                width: 0,
+                margin: EdgeInsets.only(right: 16),
+              ),
             ),
             Text('Or Continue With'),
-            Separator(
-              width: 0.225,
-              margin: EdgeInsets.only(left: 16),
+            Expanded(
+              child: Separator(
+                width: 0,
+                margin: EdgeInsets.only(left: 16),
+              ),
             ),
           ],
         ),

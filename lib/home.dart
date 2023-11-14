@@ -9,15 +9,18 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
-          Top(),
-          Content(),
-        ],
+    return Scaffold(
+      // This safearea made the top one look bad
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            Top(),
+            Content(),
+          ],
+        ),
       ),
     );
   }
@@ -76,6 +79,7 @@ class Top extends StatelessWidget {
               )
             ],
           ),
+          // TODO search bar
         ],
       ),
     );

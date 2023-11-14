@@ -4,7 +4,9 @@ import 'package:inhacks_2023/widgets/properties.dart';
 import 'package:inhacks_2023/widgets/separator.dart';
 
 class NotificationItem extends StatelessWidget {
-  const NotificationItem({super.key});
+  final bool isCompleted;
+
+  const NotificationItem({this.isCompleted = false, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,12 +53,12 @@ class NotificationItem extends StatelessWidget {
                         horizontal: 12,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.red,
+                        color: isCompleted ? Colors.blue[800] : Colors.red,
                         borderRadius: BorderRadius.circular(170),
                       ),
-                      child: const Text(
-                        'Baru',
-                        style: TextStyle(
+                      child: Text(
+                        isCompleted ? 'Selesai' : 'Baru',
+                        style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w500,
                         ),
@@ -136,38 +138,43 @@ class NotificationItem extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 12),
-                const Separator(width: 0.8, margin: EdgeInsets.zero),
-                const SizedBox(height: 12),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: OpaqueButton(
-                        'Setujui',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        padX: 40,
-                        padY: 16,
-                        callback: () {},
+                if (!isCompleted)
+                  Column(
+                    children: [
+                      const SizedBox(height: 12),
+                      const Separator(width: 0.8, margin: EdgeInsets.zero),
+                      const SizedBox(height: 12),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: OpaqueButton(
+                              'Setujui',
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              padX: 40,
+                              padY: 16,
+                              callback: () {},
+                            ),
+                          ),
+                          const SizedBox(width: 18),
+                          Expanded(
+                            child: OpaqueButton(
+                              'Biarkan',
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              padX: 40,
+                              padY: 16,
+                              callback: () {},
+                              color: Colors.grey[200],
+                              textColor: Colors.black,
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    const SizedBox(width: 18),
-                    Expanded(
-                      child: OpaqueButton(
-                        'Biarkan',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        padX: 40,
-                        padY: 16,
-                        callback: () {},
-                        color: Colors.grey[200],
-                        textColor: Colors.black,
-                      ),
-                    ),
-                  ],
-                )
+                    ],
+                  ),
               ],
             ),
           ),

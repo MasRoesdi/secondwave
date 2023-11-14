@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:inhacks_2023/app_scaffold.dart';
-import 'package:inhacks_2023/donation_detail.dart';
-import 'package:inhacks_2023/finish.dart';
-import 'package:inhacks_2023/home.dart';
-import 'package:inhacks_2023/login.dart';
-import 'package:inhacks_2023/notification.dart';
-import 'package:inhacks_2023/request_form.dart';
+import 'package:inhacks_2023/widgets/properties.dart';
 import 'splash.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(const RootApp());
 }
 
@@ -22,6 +22,7 @@ class RootApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
       theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
     );

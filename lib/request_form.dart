@@ -47,6 +47,7 @@ class RequestFormScreen extends StatelessWidget {
                             FormInput(
                               placeholder: 'Mengapa anda menginginkannya?',
                               isMultipleLine: true,
+                              useBottomPadding: false,
                             ),
                           ],
                         ),
@@ -68,7 +69,9 @@ class RequestFormScreen extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const FinishScreen(),
+                                    builder: (context) => const FinishScreen(
+                                      isRequest: true,
+                                    ),
                                   ),
                                 );
                               },

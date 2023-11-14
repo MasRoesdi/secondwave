@@ -52,15 +52,23 @@ class NotificationScreenState extends State<NotificationScreen> {
                         items: const [
                           DropdownMenuItem(
                             value: 0,
-                            child: Text('All'),
+                            child: Text('Semua'),
                           ),
                           DropdownMenuItem(
                             value: 1,
-                            child: Text('Food'),
+                            child: Text('Makanan'),
                           ),
                           DropdownMenuItem(
                             value: 2,
-                            child: Text('Electronics'),
+                            child: Text('Minuman'),
+                          ),
+                          DropdownMenuItem(
+                            value: 3,
+                            child: Text('Elektronik'),
+                          ),
+                          DropdownMenuItem(
+                            value: 4,
+                            child: Text('Pakaian'),
                           ),
                         ],
                         onChanged: (value) {
@@ -82,8 +90,8 @@ class NotificationScreenState extends State<NotificationScreen> {
                   child: Column(
                     children: const [
                       NotificationItem(),
-                      NotificationItem(),
-                      NotificationItem(),
+                      NotificationItem(isCompleted: true),
+                      NotificationItem(isCompleted: true),
                     ],
                   ),
                 ),

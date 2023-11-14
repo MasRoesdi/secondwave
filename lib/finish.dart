@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:inhacks_2023/app_scaffold.dart';
 import 'package:inhacks_2023/widgets/navigation_top.dart';
 import 'package:inhacks_2023/widgets/opaque_button.dart';
+import 'package:inhacks_2023/widgets/properties.dart';
 
 class FinishScreen extends StatelessWidget {
-  const FinishScreen({super.key});
+  final bool isRequest;
+
+  const FinishScreen({this.isRequest = false, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +18,19 @@ class FinishScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              NavigationTop(callback: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AppScaffold(),
-                  ),
-                );
-              }),
+              Padding(
+                padding: EdgeInsets.all(AppPadding.screen),
+                child: NavigationTop(
+                  callback: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AppScaffold(),
+                      ),
+                    );
+                  },
+                ),
+              ),
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -36,9 +44,11 @@ class FinishScreen extends StatelessWidget {
                         Expanded(
                           child: Wrap(
                             alignment: WrapAlignment.center,
-                            children: const [
+                            children: [
                               Text(
-                                'Lorem',
+                                isRequest
+                                    ? 'Permintaan anda sudah terkirim! Tunggu donatur untuk menyetujuinya'
+                                    : 'Terima kasih atas donasi anda!',
                                 textAlign: TextAlign.center,
                               )
                             ],

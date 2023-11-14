@@ -80,7 +80,7 @@ class DonationLong extends StatelessWidget {
             fontSize: 14,
             fontWeight: FontWeight.w600,
             padX: 16,
-            padY: 16,
+            padY: 8,
             callback: () {},
           )
         ],

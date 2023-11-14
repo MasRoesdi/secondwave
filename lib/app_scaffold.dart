@@ -45,17 +45,17 @@ class AppScaffoldState extends State<AppScaffold> {
           BottomNavigationBarItem(
             icon: Image.asset('assets/icons/donation.png'),
             activeIcon: Image.asset('assets/icons/donation_active.png'),
-            label: 'Home',
+            label: 'Formulir Donasi',
           ),
           BottomNavigationBarItem(
             icon: Image.asset('assets/icons/chat.png'),
             activeIcon: Image.asset('assets/icons/chat_active.png'),
-            label: 'Home',
+            label: 'Chat',
           ),
           BottomNavigationBarItem(
             icon: Image.asset('assets/icons/profile.png'),
-            activeIcon: Image.asset('assets/icons/profile.png'),
-            label: 'Home',
+            activeIcon: Image.asset('assets/icons/profile_active.png'),
+            label: 'Profil',
           ),
         ],
       ),

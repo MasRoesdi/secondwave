@@ -135,48 +135,65 @@ class DonationDetailScreen extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 18),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: OpaqueButton(
-                              'Lihat Maps',
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              padX: 32,
-                              padY: 16,
-                              callback: () {},
-                            ),
-                          ),
-                          const SizedBox(width: 18),
-                          Expanded(
-                            child: OpaqueButton(
-                              'Dapatkan',
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              padX: 32,
-                              padY: 16,
-                              callback: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const RequestFormScreen(),
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
                     ],
                   ),
                 ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: AppPadding.screen,
+                bottom: AppPadding.screen,
+                right: AppPadding.screen,
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  // TODO button design
+                  Expanded(
+                    child: OpaqueButton(
+                      'Lihat Maps',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      padX: 32,
+                      padY: 16,
+                      callback: () {},
+                    ),
+                  ),
+                  const SizedBox(width: 18),
+                  Expanded(
+                    child: OpaqueButton(
+                      'Dapatkan',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      padX: 32,
+                      padY: 16,
+                      callback: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RequestFormScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
         ),
       ),
     );
+  }
+}
+
+class MapsButton extends StatelessWidget {
+  const MapsButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
   }
 }

@@ -4,13 +4,23 @@ import 'package:inhacks_2023/widgets/properties.dart';
 class FormInput extends StatelessWidget {
   final String? placeholder;
   final bool isMultipleLine;
+  final IconData? icon;
+  final IconData? prefixIcon;
+  final bool useBottomPadding;
 
-  const FormInput({this.placeholder, this.isMultipleLine = false, super.key});
+  const FormInput({
+    this.placeholder,
+    this.isMultipleLine = false,
+    this.icon,
+    this.prefixIcon,
+    this.useBottomPadding = true,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 24),
+      padding: EdgeInsets.only(bottom: useBottomPadding ? 24 : 0),
       child: TextField(
         decoration: InputDecoration(
           filled: true,
@@ -28,6 +38,10 @@ class FormInput extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(color: AppColors.primary, width: 1),
           ),
+          suffixIcon: icon != null ? Icon(icon, color: Colors.grey[600]) : null,
+          prefixIcon: prefixIcon != null
+              ? Icon(prefixIcon, color: Colors.grey[600])
+              : null,
         ),
         minLines: 1,
         maxLines: isMultipleLine ? null : 1,

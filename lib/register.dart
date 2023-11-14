@@ -80,12 +80,12 @@ class RegisterScreen extends StatelessWidget {
                   const Text(
                     'Sudah punya akun? Masuk ',
                     style: TextStyle(
-                      fontSize: 11,
+                      fontSize: 14,
                     ),
                   ),
                   PlainButton(
                     'di sini',
-                    size: 11,
+                    size: 14,
                     fontWeight: FontWeight.w600,
                     callback: () {
                       Navigator.push(
@@ -122,41 +122,40 @@ class AuthCheckboxState extends State<AuthCheckbox> {
   Widget build(BuildContext context) {
     // This thing overflows
     return Row(
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Checkbox(
-          activeColor: AppColors.primary,
-          value: isChecked,
-          onChanged: (value) {
-            setState(() {
-              isChecked = value!;
-            });
-          },
-        ),
         Expanded(
           child: Wrap(
+            alignment: WrapAlignment.center,
             crossAxisAlignment: WrapCrossAlignment.center,
-            runSpacing: 0,
-            spacing: 0,
             children: [
+              Checkbox(
+                activeColor: AppColors.primary,
+                value: isChecked,
+                onChanged: (value) {
+                  setState(() {
+                    isChecked = value!;
+                  });
+                },
+              ),
               const Text(
                 'Saya menyetujui ',
                 style: TextStyle(
-                  fontSize: 11,
+                  fontSize: 14,
                 ),
               ),
               PlainButton(
                 'syarat dan ketentuan',
-                size: 11,
+                size: 14,
                 fontWeight: FontWeight.w400,
                 callback: () {},
               ),
               const Text(
                 ' aplikasi ini.',
                 style: TextStyle(
-                  fontSize: 11,
+                  fontSize: 14,
                 ),
               ),
             ],
