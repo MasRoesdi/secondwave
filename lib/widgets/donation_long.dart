@@ -3,8 +3,17 @@ import 'package:inhacks_2023/widgets/opaque_button.dart';
 
 class DonationLong extends StatelessWidget {
   final String assetName;
+  final String itemName;
+  final String address;
+  final double distance;
 
-  const DonationLong(this.assetName, {super.key});
+  const DonationLong({
+    required this.assetName,
+    required this.itemName,
+    required this.address,
+    required this.distance,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +54,9 @@ class DonationLong extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Lorem ipsum',
-                  style: TextStyle(
+                Text(
+                  itemName,
+                  style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                   ),
@@ -56,18 +65,21 @@ class DonationLong extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset('assets/icons/address.png'),
-                    const Text(
-                      'Address',
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: Color.fromRGBO(130, 130, 130, 1),
+                    Expanded(
+                      child: Text(
+                        address,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 10,
+                          color: Color.fromRGBO(130, 130, 130, 1),
+                        ),
                       ),
                     ),
                   ],
                 ),
-                const Text(
-                  '3.3 Km',
-                  style: TextStyle(
+                Text(
+                  '$distance Km',
+                  style: const TextStyle(
                     fontSize: 12,
                     color: Color.fromRGBO(130, 130, 130, 1),
                   ),
@@ -76,7 +88,7 @@ class DonationLong extends StatelessWidget {
             ),
           ),
           OpaqueButton(
-            'Route',
+            'Rute',
             fontSize: 14,
             fontWeight: FontWeight.w600,
             padX: 16,

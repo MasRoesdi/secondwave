@@ -40,7 +40,7 @@ class AppScaffoldState extends State<AppScaffold> {
           BottomNavigationBarItem(
             icon: Image.asset('assets/icons/home.png'),
             activeIcon: Image.asset('assets/icons/home_active.png'),
-            label: 'Home',
+            label: 'Beranda',
           ),
           BottomNavigationBarItem(
             icon: Image.asset('assets/icons/donation.png'),
@@ -50,7 +50,7 @@ class AppScaffoldState extends State<AppScaffold> {
           BottomNavigationBarItem(
             icon: Image.asset('assets/icons/chat.png'),
             activeIcon: Image.asset('assets/icons/chat_active.png'),
-            label: 'Chat',
+            label: 'Pesan',
           ),
           BottomNavigationBarItem(
             icon: Image.asset('assets/icons/profile.png'),

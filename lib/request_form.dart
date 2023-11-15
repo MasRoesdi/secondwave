@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:inhacks_2023/finish.dart';
-import 'package:inhacks_2023/widgets/auth_input.dart';
 import 'package:inhacks_2023/widgets/form_input.dart';
 import 'package:inhacks_2023/widgets/navigation_top.dart';
 import 'package:inhacks_2023/widgets/opaque_button.dart';
@@ -44,6 +43,10 @@ class RequestFormScreen extends StatelessWidget {
                           children: const [
                             FormInput(placeholder: 'Nama Produk'),
                             FormInput(placeholder: 'Nama Lengkap'),
+                            FormInput(
+                              placeholder: 'Kuantitas',
+                              isNumber: true,
+                            ),
                             FormInput(
                               placeholder: 'Mengapa anda menginginkannya?',
                               isMultipleLine: true,

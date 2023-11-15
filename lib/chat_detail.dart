@@ -61,7 +61,7 @@ class ChatDetailScreenState extends State<ChatDetailScreen> {
                         'okee',
                         isSelf: true,
                       ),
-                      ChatBubble('terima kasih, bajunya sangat bagus sekali'),
+                      ChatBubble('terima kasih, mejanya sangat bagus sekali'),
                     ],
                   ),
                 ),

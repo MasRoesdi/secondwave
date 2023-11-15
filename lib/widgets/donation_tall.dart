@@ -3,8 +3,17 @@ import 'package:inhacks_2023/donation_detail.dart';
 
 class DonationTall extends StatelessWidget {
   final String assetName;
+  final String itemName;
+  final String address;
+  final double rating;
 
-  const DonationTall(this.assetName, {super.key});
+  const DonationTall({
+    required this.assetName,
+    required this.itemName,
+    required this.address,
+    required this.rating,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +31,6 @@ class DonationTall extends StatelessWidget {
       },
       child: Container(
         width: 180,
-        height: 180,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(15),
@@ -64,14 +72,14 @@ class DonationTall extends StatelessWidget {
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
-                    children: const [
+                    children: [
                       Text(
-                        '4.5 ',
-                        style: TextStyle(
+                        '$rating ',
+                        style: const TextStyle(
                           fontSize: 10,
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.star,
                         size: 10,
                         color: Colors.yellow,
@@ -81,12 +89,39 @@ class DonationTall extends StatelessWidget {
                 )
               ],
             ),
-            const SizedBox(height: 6),
-            const Text(
-              'Lorem ipsum',
-              style: TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w500,
+            Padding(
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                children: [
+                  Text(
+                    itemName,
+                    softWrap: false,
+                    overflow: TextOverflow.fade,
+                    style: const TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const SizedBox(height: 3),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset('assets/icons/address.png'),
+                      Flexible(
+                        child: Text(
+                          address,
+                          overflow: TextOverflow.fade,
+                          softWrap: false,
+                          style: const TextStyle(
+                            fontSize: 10,
+                            color: Color.fromRGBO(130, 130, 130, 1),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
           ],

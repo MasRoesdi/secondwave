@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inhacks_2023/request_form.dart';
+import 'package:inhacks_2023/route.dart';
 import 'package:inhacks_2023/widgets/navigation_top.dart';
 import 'package:inhacks_2023/widgets/opaque_button.dart';
 import 'package:inhacks_2023/widgets/plain_button.dart';
@@ -149,7 +150,6 @@ class DonationDetailScreen extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  // TODO button design
                   Expanded(
                     child: OpaqueButton(
                       'Lihat Maps',
@@ -157,7 +157,16 @@ class DonationDetailScreen extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       padX: 32,
                       padY: 16,
-                      callback: () {},
+                      color: Colors.transparent,
+                      textColor: AppColors.primary,
+                      callback: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RouteScreen(),
+                          ),
+                        );
+                      },
                     ),
                   ),
                   const SizedBox(width: 18),

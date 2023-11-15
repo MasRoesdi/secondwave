@@ -56,7 +56,7 @@ class ChatScreen extends StatelessWidget {
                     ChatTab(
                       assetName: 'assets/images/person-1.jpg',
                       name: 'Panti Asuhan Kasih',
-                      lastMessage: 'terima kasih, bajunya sangat bagus sekali',
+                      lastMessage: 'terima kasih, mejanya sangat bagus sekali',
                       messageTime: '10:20',
                     ),
                     ChatTab(

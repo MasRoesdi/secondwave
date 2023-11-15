@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:inhacks_2023/widgets/properties.dart';
 
 class FormInput extends StatelessWidget {
@@ -7,6 +8,7 @@ class FormInput extends StatelessWidget {
   final IconData? icon;
   final IconData? prefixIcon;
   final bool useBottomPadding;
+  final bool isNumber;
 
   const FormInput({
     this.placeholder,
@@ -14,6 +16,7 @@ class FormInput extends StatelessWidget {
     this.icon,
     this.prefixIcon,
     this.useBottomPadding = true,
+    this.isNumber = false,
     super.key,
   });
 
@@ -43,6 +46,12 @@ class FormInput extends StatelessWidget {
               ? Icon(prefixIcon, color: Colors.grey[600])
               : null,
         ),
+        keyboardType: isNumber ? TextInputType.number : TextInputType.text,
+        inputFormatters: isNumber
+            ? [
+                FilteringTextInputFormatter.digitsOnly,
+              ]
+            : [],
         minLines: 1,
         maxLines: isMultipleLine ? null : 1,
       ),

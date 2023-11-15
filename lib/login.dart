@@ -40,7 +40,7 @@ class LoginScreen extends StatelessWidget {
                   const AuthCheckbox(),
                   PlainButton(
                     'Lupa Password?',
-                    size: 11,
+                    size: 14,
                     fontWeight: FontWeight.w600,
                     callback: () {},
                   ),
@@ -184,7 +184,7 @@ class AuthCheckboxState extends State<AuthCheckbox> {
         const Text(
           'Ingat saya',
           style: TextStyle(
-            fontSize: 11,
+            fontSize: 14,
             fontWeight: FontWeight.w500,
           ),
         ),

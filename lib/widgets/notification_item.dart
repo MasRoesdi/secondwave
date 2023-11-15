@@ -38,7 +38,7 @@ class NotificationItem extends StatelessWidget {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8),
                               child: Image.asset(
-                                'assets/images/furnish-1.jpg',
+                                'assets/images/furnish-4.jpg',
                                 fit: BoxFit.cover,
                               ),
                             ),

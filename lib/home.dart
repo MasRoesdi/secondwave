@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:inhacks_2023/notification.dart';
 import 'package:inhacks_2023/widgets/donation_long.dart';
 import 'package:inhacks_2023/widgets/donation_tall.dart';
+import 'package:inhacks_2023/widgets/form_input.dart';
 import 'package:inhacks_2023/widgets/properties.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,8 +11,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // This safearea made the top one look bad
       body: SafeArea(
+        top: false,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
@@ -35,9 +36,8 @@ class Top extends StatelessWidget {
 
     return Container(
       width: screenSize.width,
-      height: 180,
       margin: const EdgeInsets.only(bottom: 24),
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+      padding: const EdgeInsets.only(left: 24, top: 48, right: 24, bottom: 24),
       decoration: BoxDecoration(
         color: AppColors.primary,
         borderRadius: const BorderRadius.only(
@@ -79,7 +79,12 @@ class Top extends StatelessWidget {
               )
             ],
           ),
-          // TODO search bar
+          const SizedBox(height: 12),
+          const FormInput(
+            placeholder: 'Cari di sini',
+            prefixIcon: Icons.search,
+            useBottomPadding: false,
+          )
         ],
       ),
     );
@@ -112,6 +117,32 @@ class ContentState extends State<Content> {
     'Lain - lain',
     'Lain - lain'
   ];
+  Map<String, List<String>> itemsName = {
+    'food': [
+      'Roti Bakar Madu',
+      'Bakso Bakar',
+      'Kue Ulang Tahun',
+      'Pizza Vegan',
+    ],
+    'furnish': [
+      'Kursi Hitam Modern',
+      'Kursi Putih ala Bar',
+      'Kursi Warna Model Minimalis',
+      'Meja Multifungsi',
+    ],
+    'clothing': [
+      'Baju Polkadot',
+      'Sepatu Brand',
+      'Sepatu Anak',
+      'Celana Jeans',
+    ],
+    'electronics': [
+      'Keyboard Wireless',
+      'Smart Watch Bekas',
+      'Wireless Mouse',
+      'Headphone Kabel',
+    ],
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -174,7 +205,12 @@ class ContentState extends State<Content> {
                       children: [
                         for (var i = 1; i <= 4; i++)
                           DonationTall(
-                            'assets/images/${category[currentContent]}-$i.jpg',
+                            assetName:
+                                'assets/images/${category[currentContent]}-$i.jpg',
+                            address: 'Purwokerto Selatan',
+                            rating: 4.5,
+                            itemName:
+                                itemsName[category[currentContent]]![i - 1],
                           ),
                       ],
                     ),
@@ -182,7 +218,11 @@ class ContentState extends State<Content> {
                   const SizedBox(height: 24),
                   for (var i = 1; i <= 4; i++)
                     DonationLong(
-                      'assets/images/${category[currentContent]}-$i.jpg',
+                      assetName:
+                          'assets/images/${category[currentContent]}-$i.jpg',
+                      address: 'Purwokerto Selatan',
+                      distance: 3.3,
+                      itemName: itemsName[category[currentContent]]![i - 1],
                     ),
                 ],
               ),

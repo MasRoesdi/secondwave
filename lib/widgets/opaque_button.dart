@@ -38,6 +38,14 @@ class OpaqueButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
         ),
+        side: color == Colors.transparent && textColor != null
+            ? MaterialStatePropertyAll(
+                BorderSide(
+                  color: textColor!,
+                  width: 1,
+                ),
+              )
+            : null,
       ),
       onPressed: callback!,
       child: Text(

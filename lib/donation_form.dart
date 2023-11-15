@@ -105,7 +105,10 @@ class DonationFormScreenState extends State<DonationFormScreen> {
                                 ),
                               ],
                             ),
-                            // TODO number input
+                            const FormInput(
+                              placeholder: 'Kuantitas',
+                              isNumber: true,
+                            ),
                             const FormInput(placeholder: 'Alamat'),
                             const FormInput(
                               placeholder: 'Deskripsi',
